@@ -1,0 +1,27 @@
+<h1>Influx Employees</h1>
+
+
+<% employees = Employee.all %>
+<% if employees.size == 0 %>
+  <em> No Employees </em>
+<% else %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Position</th>
+    <!--<th></th>-->
+    <th></th>
+  </tr>
+  <% employees.each do |employee| %>
+    <tr>
+      <td><%= link_to employee.name, employee %></td>
+      <td><%= employee.position %></td>
+      <!--<td><%= link_to "edit", edit_employee_path(employee) %></td>-->
+      <td><%= link_to "delete", employee, method: :delete %></td>
+
+    </tr>
+  <% end %>
+<% end %>
+</table>
+
+<p><%= link_to "New Employee", new_employee_path() %></p>

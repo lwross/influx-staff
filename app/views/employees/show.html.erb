@@ -1,0 +1,30 @@
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @employee.position %>
+</p>
+
+<p>
+  <%= @employee.bio %>
+</p>
+
+<% if @employee.twitter.length > 0 %>
+<p>
+
+  <img src="<%= @twitter_user.profile_image_url %>" />
+  <strong><%= link_to '@' + @employee.twitter, 'http://twitter.com/' + @employee.twitter %> has been saying</strong>
+  <table>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td><%= tweet.text %></td>
+      </tr>
+    <% end %>
+  </table>
+</p>
+<% end %>
