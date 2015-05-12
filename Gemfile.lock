@@ -71,6 +71,7 @@ GEM
     multipart-post (2.0.0)
     naught (1.0.0)
     oauth (0.4.7)
+    pg (0.18.1)
     polyglot (0.3.5)
     rack (1.5.2)
     rack-test (0.6.3)
@@ -147,6 +148,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   linkedin
+  pg
   rails (= 4.1.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
