@@ -31,6 +31,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.new(employee_params)
 
     @employee.save
+    flash[:notice] = "You have successfully added employee " + @employee.name
     redirect_to @employee
   end
 
@@ -41,6 +42,7 @@ class EmployeesController < ApplicationController
   def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy
+    flash[:notice] = "You have successfully deleted employee " + @employee.name
     redirect_to action: "index"
   end
 
